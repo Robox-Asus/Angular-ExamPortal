@@ -1,0 +1,68 @@
+<div class="bootstrap-wrapper marginTop" *ngIf="quiz">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <mat-card>
+          <mat-card-header>
+            <!-- heading -->
+            <mat-card-title> Read the instructions carefully </mat-card-title>
+            <mat-card-subtitle> One More Step To Go </mat-card-subtitle>
+          </mat-card-header>
+          <mat-divider></mat-divider>
+          <mat-card-content class="marginTop marginLeft">
+            <!-- content  -->
+            <h1>{{ quiz.title }}</h1>
+            <p>{{ quiz.description }}</p>
+            <br />
+            <mat-divider></mat-divider>
+            <br />
+            <h1>Important Instructions</h1>
+            <ul>
+              <li>This quiz is only for pratice purpose.</li>
+              <li>
+                You have to submit the quiz within
+                <b> {{ quiz.numberOfQuestions * 2 }} </b> minutes.
+              </li>
+              <li>You can attempt the quiz anytime</li>
+              <li>
+                There are <b> {{ quiz.numberOfQuestions }} </b> questions in the
+                quiz.
+              </li>
+              <li>
+                Each question carry approximate
+                <b
+                  >{{ floatToDecimal(quiz.maxMarks / quiz.numberOfQuestions) }}
+                </b>
+                marks. No Negative marking for wrong answer.
+              </li>
+              <li>Each Question is MCQ Type</li>
+              <li>Attempt All the questions .</li>
+            </ul>
+            <br />
+            <mat-divider></mat-divider>
+            <br />
+            <h1>Atttempting Quiz</h1>
+            <ul>
+              <li>Click on <b>Start Quiz</b> Button to start the Quiz.</li>
+              <li>Scroll Down to move to next quesiton</li>
+              <li>
+                After Completing Click on <b>Submit Button</b> to submit all the
+                quiz answers given by you.
+              </li>
+              <li>
+                Report is automatically generated in PDF form after submiting.
+                You can dowload
+              </li>
+            </ul>
+          </mat-card-content>
+          <mat-card-actions>
+            <!-- actions  -->
+            <div class="container text-center marginDown" (click)="start()">
+              <button mat-raised-button color="primary">Start Quiz</button>
+            </div>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

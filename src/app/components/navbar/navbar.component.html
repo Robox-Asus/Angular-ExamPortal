@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+    <a routerLink="/" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+     <mat-icon>menu_book</mat-icon>
+    </a>
+   <span>Exam Portal</span>
+   <span class="example-spacer"></span>
+   <a *ngIf="this.isActive && user"   style="margin-right: 45px;"  [routerLink]="'/signup'" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>account_circle</mat-icon>
+    {{user.username.toUpperCase()}}
+   </a>
+   
+   <a *ngIf="!this.isActive" [routerLink]="'/login'" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+     <mat-icon>login</mat-icon>
+   </a>
+   <a *ngIf="this.isActive" (click)="loggedOut()" [routerLink]="'/login'" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>logout</mat-icon>
+  </a>
+  <button *ngIf="this.isActive" (click)="redirect()" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>home</mat-icon>
+  </button>
+   <a *ngIf="!this.isActive"  [routerLink]="'/signup'" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>account_circle</mat-icon>
+   </a>
+ </mat-toolbar>

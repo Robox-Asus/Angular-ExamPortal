@@ -1,0 +1,45 @@
+<mat-card class="marginTop" *ngIf="userstr">
+    <mat-card-content>
+      <div class="bootstrap-wrapper">
+        <div class="container">
+          <div class="container text-center">
+            <img src="../../../assets/unnamed.jpg" class="profile-image" alt="" />
+          </div>
+          <h1 class="text-center mat">{{userstr.firstName.toUpperCase()}} {{userstr.lastName.toUpperCase()}}</h1>
+          <div class="row">
+            <div class="col-md-10 offset-md-1">
+              <!-- table details -->
+              <table class="table text-center">
+                <tr>
+                  <td>Username</td>
+                  <td>{{userstr.username.toUpperCase()}}</td>
+                </tr>
+                <tr>
+                  <td>User ID</td>
+                  <td>{{userstr.id}}</td>
+                </tr>
+                <tr>
+                  <td>Phone</td>
+                  <td *ngIf="userstr.phone">{{userstr.phone}}</td>
+                </tr>
+                <tr>
+                  <td>Role</td>
+                  <td>{{userstr.authorities[0].authority.toUpperCase()}}</td>
+                </tr>
+                <tr>
+                  <td>Status</td>
+                  <td>{{userstr.enabled?"ACTIVE":"INACTIVE"}}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions class="text-center">
+      <button mat-raised-button routerLink="/user-dashboard/update-user" color="primary">UPDATE</button>
+      <button mat-raised-button color="accent">SHARE</button>
+    </mat-card-actions>
+    <hr size="2" color="blue" >
+  </mat-card>
+  
