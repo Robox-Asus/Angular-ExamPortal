@@ -6,6 +6,5 @@ Step 3 : Just clone this into any folder
 Step 4 : Open in the Visual studio code and open the visual studio terminal ( Ctrl + ~)
 Step 5 : Type "npm install"
 Step 6 : Then type ng serve and wait for sometime it will automatically do all the things and after completion
-		then type the commang " ng serve " to runt the project.
 		
 		open any browser and then type https://localhost:4200
